@@ -5,7 +5,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Join Meeting - ZoomConnect</title>
 <!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
 <!-- Material Symbols -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <!-- Google Fonts -->
@@ -14,112 +14,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <!-- Tailwind Config -->
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "surface-container-low": "#f3f2ff",
-                        "outline-variant": "#c3c5d9",
-                        "primary-fixed-dim": "#b5c4ff",
-                        "on-primary": "#ffffff",
-                        "secondary-fixed-dim": "#c0c7d6",
-                        "on-secondary-fixed-variant": "#404754",
-                        "on-primary-fixed": "#00164e",
-                        "primary-fixed": "#dce1ff",
-                        "surface-variant": "#e1e1ef",
-                        "on-error-container": "#93000a",
-                        "on-error": "#ffffff",
-                        "inverse-surface": "#2e303a",
-                        "on-background": "#191b24",
-                        "on-secondary": "#ffffff",
-                        "tertiary-fixed-dim": "#ffb59e",
-                        "inverse-primary": "#b5c4ff",
-                        "tertiary-container": "#c53b00",
-                        "surface-container-highest": "#e1e1ef",
-                        "on-tertiary-fixed-variant": "#842500",
-                        "surface-dim": "#d9d9e6",
-                        "surface-bright": "#faf8ff",
-                        "on-primary-container": "#ecedff",
-                        "surface": "#faf8ff",
-                        "on-surface-variant": "#434656",
-                        "surface-container-high": "#e7e7f4",
-                        "on-primary-fixed-variant": "#003baf",
-                        "tertiary": "#9b2d00",
-                        "error-container": "#ffdad6",
-                        "error": "#ba1a1a",
-                        "primary": "#0046cc",
-                        "on-tertiary": "#ffffff",
-                        "on-tertiary-container": "#ffeae5",
-                        "on-surface": "#191b24",
-                        "tertiary-fixed": "#ffdbd0",
-                        "on-tertiary-fixed": "#3a0b00",
-                        "surface-tint": "#0050e4",
-                        "background": "#faf8ff",
-                        "surface-container": "#ededfa",
-                        "primary-container": "#0b5cff",
-                        "on-secondary-fixed": "#151c27",
-                        "on-secondary-container": "#5e6572",
-                        "secondary-container": "#dce2f3",
-                        "secondary": "#585f6c",
-                        "surface-container-lowest": "#ffffff",
-                        "inverse-on-surface": "#eff0fd",
-                        "secondary-fixed": "#dce2f3",
-                        "outline": "#737688"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "2xl": "48px",
-                        "gutter": "20px",
-                        "max-content-width": "1440px",
-                        "xl": "32px",
-                        "sm": "8px",
-                        "base": "4px",
-                        "md": "16px",
-                        "lg": "24px",
-                        "sidebar-width": "280px",
-                        "xs": "4px"
-                    },
-                    "fontFamily": {
-                        "headline-sm": ["Inter"],
-                        "headline-md": ["Inter"],
-                        "display-lg-mobile": ["Inter"],
-                        "body-sm": ["Inter"],
-                        "body-lg": ["Inter"],
-                        "label-md": ["Inter"],
-                        "display-lg": ["Inter"],
-                        "body-md": ["Inter"],
-                        "label-sm": ["Inter"]
-                    },
-                    "fontSize": {
-                        "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
-                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
-                        "display-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                        "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
-                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
-                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
-                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}]
-                    }
-                }
-            }
-        }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .icon-fill {
-            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-    </style>
+
+
+    <link rel="stylesheet" href="shared.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased overflow-hidden h-screen flex">
 <!-- SideNavBar (Desktop) -->
@@ -130,7 +28,7 @@
 <span class="font-headline-md text-headline-md font-bold">P</span>
 </div>
 <div>
-<h2 class="font-headline-sm text-headline-sm font-bold text-primary">Pro Workspace</h2>
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary">Enterprise Tier</h2>
 <p class="font-label-md text-label-md text-secondary mt-base">Enterprise Tier</p>
 </div>
 </div>

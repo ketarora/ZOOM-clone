@@ -4,117 +4,14 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Team Chat - ZoomConnect</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-secondary-fixed": "#151c27",
-                    "on-tertiary-container": "#ffeae5",
-                    "surface-variant": "#e1e1ef",
-                    "on-tertiary": "#ffffff",
-                    "on-primary": "#ffffff",
-                    "on-primary-container": "#ecedff",
-                    "on-surface-variant": "#434656",
-                    "on-secondary": "#ffffff",
-                    "tertiary-container": "#c53b00",
-                    "surface-container-highest": "#e1e1ef",
-                    "primary-container": "#0b5cff",
-                    "tertiary-fixed-dim": "#ffb59e",
-                    "on-error": "#ffffff",
-                    "on-error-container": "#93000a",
-                    "outline": "#737688",
-                    "on-tertiary-fixed-variant": "#842500",
-                    "inverse-on-surface": "#eff0fd",
-                    "primary-fixed-dim": "#b5c4ff",
-                    "outline-variant": "#c3c5d9",
-                    "surface": "#faf8ff",
-                    "tertiary-fixed": "#ffdbd0",
-                    "tertiary": "#9b2d00",
-                    "secondary-fixed-dim": "#c0c7d6",
-                    "surface-container-high": "#e7e7f4",
-                    "on-primary-fixed": "#00164e",
-                    "on-primary-fixed-variant": "#003baf",
-                    "secondary-container": "#dce2f3",
-                    "inverse-surface": "#2e303a",
-                    "on-tertiary-fixed": "#3a0b00",
-                    "secondary-fixed": "#dce2f3",
-                    "error-container": "#ffdad6",
-                    "surface-container-low": "#f3f2ff",
-                    "on-secondary-container": "#5e6572",
-                    "inverse-primary": "#b5c4ff",
-                    "on-background": "#191b24",
-                    "surface-tint": "#0050e4",
-                    "surface-dim": "#d9d9e6",
-                    "secondary": "#585f6c",
-                    "error": "#ba1a1a",
-                    "primary-fixed": "#dce1ff",
-                    "on-surface": "#191b24",
-                    "on-secondary-fixed-variant": "#404754",
-                    "surface-bright": "#faf8ff",
-                    "primary": "#0046cc",
-                    "background": "#faf8ff",
-                    "surface-container-lowest": "#ffffff",
-                    "surface-container": "#ededfa"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "gutter": "20px",
-                    "base": "4px",
-                    "sm": "8px",
-                    "md": "16px",
-                    "sidebar-width": "280px",
-                    "2xl": "48px",
-                    "xs": "4px",
-                    "xl": "32px",
-                    "lg": "24px",
-                    "max-content-width": "1440px"
-            },
-            "fontFamily": {
-                    "label-md": ["Inter"],
-                    "display-lg-mobile": ["Inter"],
-                    "body-md": ["Inter"],
-                    "headline-md": ["Inter"],
-                    "headline-sm": ["Inter"],
-                    "body-lg": ["Inter"],
-                    "label-sm": ["Inter"],
-                    "display-lg": ["Inter"],
-                    "body-sm": ["Inter"]
-            },
-            "fontSize": {
-                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
-                    "display-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
-                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
-                    "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
-                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
-                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}]
-            }
-          }
-        }
-      }
-    </script>
-<style>
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
-        }
-    </style>
+
+
+    <link rel="stylesheet" href="shared.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased overflow-hidden flex h-screen">
 <!-- SideNavBar (Predicted JSON) -->
@@ -126,7 +23,7 @@
 <img alt="Company Logo" class="w-8 h-8 rounded-md object-cover" data-alt="A small, stylized corporate logo featuring a modern geometric design in primary blue and crisp white, placed on a light gray rounded square background, typical of a modern software workspace indicator." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTIlDL5KavhnCTt8UIeutESfFiZRlsyH1Y-Eh9vbwP8JJfaUeqmlDcWD_X8Qm7j1ewD6U-tEnnMoJDEtBkLHO0J1_7aZ1rhhlYP8iQsJrwSioXHD3zI_6ZVLLuKqYHgSXnuOt7c7-1Dk8SJHj2tLXbnDWnKwrOJ7XjLOOkk9RTD3DRJO5P5hPKNDBF64g2mBxBKiOYCeeEtCaXOfp6OeRgvtGV3L36nBZYQLAmX4Z3ewG7jqh-yYOD0h_Bdcqe9FG11mRhg3VCJxY"/>
 </div>
 <div>
-<h2 class="font-headline-sm text-headline-sm font-bold text-primary truncate">Pro Workspace</h2>
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary truncate">Enterprise Tier</h2>
 <p class="font-label-sm text-label-sm text-secondary truncate">Enterprise Tier</p>
 </div>
 </div>

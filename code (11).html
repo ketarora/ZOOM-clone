@@ -3,120 +3,15 @@
 <html class="h-full bg-surface" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Contacts - Streamline</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<title>Contacts - ZoomConnect</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-surface": "#191b24",
-                        "tertiary-container": "#c53b00",
-                        "tertiary-fixed": "#ffdbd0",
-                        "outline": "#737688",
-                        "surface-container": "#ededfa",
-                        "surface-dim": "#d9d9e6",
-                        "on-primary": "#ffffff",
-                        "on-secondary-fixed-variant": "#404754",
-                        "on-tertiary-fixed-variant": "#842500",
-                        "on-secondary-container": "#5e6572",
-                        "on-error": "#ffffff",
-                        "error": "#ba1a1a",
-                        "inverse-surface": "#2e303a",
-                        "tertiary-fixed-dim": "#ffb59e",
-                        "surface-variant": "#e1e1ef",
-                        "surface-tint": "#0050e4",
-                        "secondary": "#585f6c",
-                        "on-secondary-fixed": "#151c27",
-                        "on-primary-fixed": "#00164e",
-                        "secondary-fixed": "#dce2f3",
-                        "primary-fixed-dim": "#b5c4ff",
-                        "tertiary": "#9b2d00",
-                        "on-tertiary-container": "#ffeae5",
-                        "surface-container-high": "#e7e7f4",
-                        "on-tertiary": "#ffffff",
-                        "on-background": "#191b24",
-                        "surface-container-lowest": "#ffffff",
-                        "primary-fixed": "#dce1ff",
-                        "secondary-container": "#dce2f3",
-                        "background": "#faf8ff",
-                        "error-container": "#ffdad6",
-                        "on-secondary": "#ffffff",
-                        "on-error-container": "#93000a",
-                        "inverse-primary": "#b5c4ff",
-                        "surface-bright": "#faf8ff",
-                        "on-surface-variant": "#434656",
-                        "secondary-fixed-dim": "#c0c7d6",
-                        "surface-container-low": "#f3f2ff",
-                        "surface-container-highest": "#e1e1ef",
-                        "on-primary-container": "#ecedff",
-                        "on-primary-fixed-variant": "#003baf",
-                        "inverse-on-surface": "#eff0fd",
-                        "surface": "#faf8ff",
-                        "primary": "#0046cc",
-                        "primary-container": "#0b5cff",
-                        "outline-variant": "#c3c5d9",
-                        "on-tertiary-fixed": "#3a0b00"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "sm": "8px",
-                        "max-content-width": "1440px",
-                        "xl": "32px",
-                        "md": "16px",
-                        "sidebar-width": "280px",
-                        "xs": "4px",
-                        "2xl": "48px",
-                        "lg": "24px",
-                        "gutter": "20px",
-                        "base": "4px"
-                    },
-                    "fontFamily": {
-                        "body-lg": ["Inter"],
-                        "headline-md": ["Inter"],
-                        "label-md": ["Inter"],
-                        "display-lg-mobile": ["Inter"],
-                        "body-sm": ["Inter"],
-                        "label-sm": ["Inter"],
-                        "headline-sm": ["Inter"],
-                        "body-md": ["Inter"],
-                        "display-lg": ["Inter"]
-                    },
-                    "fontSize": {
-                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
-                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
-                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
-                        "display-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
-                        "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
-                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
-                        "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
-                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
-                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
-                    }
-                }
-            }
-        }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .icon-fill {
-            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .contact-card:hover .quick-actions {
-            opacity: 1;
-        }
-    </style>
+
+
+    <link rel="stylesheet" href="shared.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="h-full flex overflow-hidden bg-background text-on-background font-body-md text-body-md antialiased">
 <!-- SideNavBar -->
@@ -175,13 +70,13 @@
 <header class="flex justify-between items-center w-full px-md h-16 z-50 bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline docked full-width top-0">
 <div class="flex items-center gap-sm md:hidden">
 <span class="material-symbols-outlined text-primary text-[24px]" data-icon="menu">menu</span>
-<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Streamline</span>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">ZoomConnect</span>
 </div>
 <!-- Search -->
 <div class="flex-1 max-w-xl hidden md:flex ml-4">
 <div class="relative w-full max-w-md">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
-<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg text-body-sm font-body-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-on-surface placeholder:text-on-surface-variant/70" placeholder="Search Streamline" type="text"/>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg text-body-sm font-body-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-on-surface placeholder:text-on-surface-variant/70" placeholder="Search ZoomConnect" type="text"/>
 </div>
 </div>
 <!-- Actions -->

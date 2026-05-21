@@ -4,142 +4,14 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Schedule Meeting - ZoomConnect</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-secondary": "#ffffff",
-                        "secondary-fixed-dim": "#c0c7d6",
-                        "on-surface": "#191b24",
-                        "inverse-surface": "#2e303a",
-                        "on-error": "#ffffff",
-                        "surface-container-low": "#f3f2ff",
-                        "secondary": "#585f6c",
-                        "inverse-on-surface": "#eff0fd",
-                        "on-tertiary-fixed-variant": "#842500",
-                        "primary-fixed": "#dce1ff",
-                        "on-primary": "#ffffff",
-                        "surface-bright": "#faf8ff",
-                        "tertiary-fixed-dim": "#ffb59e",
-                        "surface-container": "#ededfa",
-                        "on-error-container": "#93000a",
-                        "secondary-fixed": "#dce2f3",
-                        "on-secondary-fixed-variant": "#404754",
-                        "tertiary-container": "#c53b00",
-                        "primary-fixed-dim": "#b5c4ff",
-                        "on-secondary-fixed": "#151c27",
-                        "error-container": "#ffdad6",
-                        "surface-container-lowest": "#ffffff",
-                        "on-primary-fixed": "#00164e",
-                        "on-tertiary": "#ffffff",
-                        "background": "#faf8ff",
-                        "primary-container": "#0b5cff",
-                        "surface": "#faf8ff",
-                        "surface-container-high": "#e7e7f4",
-                        "primary": "#0046cc",
-                        "on-background": "#191b24",
-                        "surface-variant": "#e1e1ef",
-                        "outline": "#737688",
-                        "on-tertiary-fixed": "#3a0b00",
-                        "error": "#ba1a1a",
-                        "tertiary-fixed": "#ffdbd0",
-                        "on-secondary-container": "#5e6572",
-                        "surface-tint": "#0050e4",
-                        "surface-container-highest": "#e1e1ef",
-                        "secondary-container": "#dce2f3",
-                        "on-surface-variant": "#434656",
-                        "tertiary": "#9b2d00",
-                        "on-primary-container": "#ecedff",
-                        "on-primary-fixed-variant": "#003baf",
-                        "outline-variant": "#c3c5d9",
-                        "inverse-primary": "#b5c4ff",
-                        "on-tertiary-container": "#ffeae5",
-                        "surface-dim": "#d9d9e6"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "xs": "4px",
-                        "lg": "24px",
-                        "xl": "32px",
-                        "sidebar-width": "280px",
-                        "md": "16px",
-                        "max-content-width": "1440px",
-                        "gutter": "20px",
-                        "2xl": "48px",
-                        "sm": "8px",
-                        "base": "4px"
-                    },
-                    "fontFamily": {
-                        "label-md": ["Inter"],
-                        "body-lg": ["Inter"],
-                        "headline-sm": ["Inter"],
-                        "label-sm": ["Inter"],
-                        "display-lg": ["Inter"],
-                        "headline-md": ["Inter"],
-                        "display-lg-mobile": ["Inter"],
-                        "body-md": ["Inter"],
-                        "body-sm": ["Inter"]
-                    },
-                    "fontSize": {
-                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
-                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
-                        "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
-                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
-                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
-                        "display-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
-                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
-                        "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }]
-                    }
-                }
-            }
-        }
-    </script>
-<style>
-        .toggle-checkbox:checked {
-            right: 0;
-            border-color: #0046cc;
-        }
-        .toggle-checkbox:checked + .toggle-label {
-            background-color: #0046cc;
-        }
-        .toggle-checkbox:checked + .toggle-label:after {
-            transform: translateX(100%);
-            border-color: white;
-        }
-        .toggle-label {
-            width: 40px;
-            height: 24px;
-            background-color: #c3c5d9;
-            border-radius: 9999px;
-            position: relative;
-            cursor: pointer;
-            transition: background-color 0.2s ease-in-out;
-        }
-        .toggle-label:after {
-            content: '';
-            position: absolute;
-            top: 2px;
-            left: 2px;
-            width: 20px;
-            height: 20px;
-            background-color: white;
-            border-radius: 50%;
-            transition: transform 0.2s ease-in-out;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-        }
-    </style>
+
+
+    <link rel="stylesheet" href="shared.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-background text-on-background font-body-md text-body-md antialiased h-screen overflow-hidden flex">
 <!-- SideNavBar -->
@@ -147,7 +19,7 @@
 <div class="px-lg mb-xl flex items-center gap-md">
 <div class="w-8 h-8 rounded bg-primary-container text-on-primary-container flex items-center justify-center font-bold">P</div>
 <div>
-<h2 class="font-headline-sm text-headline-sm font-bold text-primary">Pro Workspace</h2>
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary">Enterprise Tier</h2>
 <p class="font-label-sm text-label-sm text-secondary">Enterprise Tier</p>
 </div>
 </div>
