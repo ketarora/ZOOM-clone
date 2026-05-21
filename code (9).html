@@ -23,8 +23,8 @@
 <img alt="Company Logo" class="w-8 h-8 rounded-md object-cover" data-alt="A small, stylized corporate logo featuring a modern geometric design in primary blue and crisp white, placed on a light gray rounded square background, typical of a modern software workspace indicator." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTIlDL5KavhnCTt8UIeutESfFiZRlsyH1Y-Eh9vbwP8JJfaUeqmlDcWD_X8Qm7j1ewD6U-tEnnMoJDEtBkLHO0J1_7aZ1rhhlYP8iQsJrwSioXHD3zI_6ZVLLuKqYHgSXnuOt7c7-1Dk8SJHj2tLXbnDWnKwrOJ7XjLOOkk9RTD3DRJO5P5hPKNDBF64g2mBxBKiOYCeeEtCaXOfp6OeRgvtGV3L36nBZYQLAmX4Z3ewG7jqh-yYOD0h_Bdcqe9FG11mRhg3VCJxY"/>
 </div>
 <div>
-<h2 class="font-headline-sm text-headline-sm font-bold text-primary truncate">Enterprise Tier</h2>
-<p class="font-label-sm text-label-sm text-secondary truncate">Enterprise Tier</p>
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary truncate">ZoomConnect</h2>
+<p class="font-label-md text-label-md text-secondary mt-base">Enterprise Workspace</p>
 </div>
 </div>
 </div>
@@ -76,7 +76,7 @@
 <header class="flex justify-between items-center h-16 px-lg w-full z-40 sticky top-0 bg-surface dark:bg-surface-container-high shadow-sm shrink-0 border-b border-outline-variant/30">
 <!-- Brand / Search Area -->
 <div class="flex items-center gap-xl flex-1">
-<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed md:hidden">ZoomConnect</h1>
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary">ZoomConnect</h2>
 <!-- Global Search -->
 <div class="hidden md:flex relative max-w-md w-full">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
@@ -364,3 +364,14 @@
 </div>
 </div>
 </body></html>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const chatInput = document.querySelector('textarea');
+        if (chatInput) {
+            chatInput.addEventListener('input', function() {
+                this.style.height = 'auto';
+                this.style.height = (this.scrollHeight) + 'px';
+            });
+        }
+    });
+</script>

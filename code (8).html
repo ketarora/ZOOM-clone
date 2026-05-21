@@ -147,7 +147,7 @@
 <!-- Left Controls (A/V) -->
 <div class="flex items-center gap-xs">
 <div class="flex items-center bg-surface/5 rounded-lg border border-surface/10 hover:bg-surface/10 transition-colors">
-<button class="flex flex-col items-center justify-center px-md py-sm gap-xs text-surface">
+<button aria-label="Mute Microphone" class="flex flex-col items-center justify-center px-md py-sm gap-xs text-surface">
 <span class="material-symbols-outlined text-[24px]">mic</span>
 <span class="font-label-sm text-label-sm">Mute</span>
 </button>
@@ -156,7 +156,7 @@
 </button>
 </div>
 <div class="flex items-center bg-surface/5 rounded-lg border border-surface/10 hover:bg-surface/10 transition-colors">
-<button class="flex flex-col items-center justify-center px-md py-sm gap-xs text-surface">
+<button aria-label="Stop Video" class="flex flex-col items-center justify-center px-md py-sm gap-xs text-surface">
 <span class="material-symbols-outlined text-[24px]">videocam</span>
 <span class="font-label-sm text-label-sm">Stop Video</span>
 </button>
@@ -180,7 +180,7 @@
 <span class="material-symbols-outlined text-[24px] group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">chat</span>
 <span class="font-label-sm text-label-sm mt-xs">Chat</span>
 </button>
-<button class="flex flex-col items-center justify-center px-md py-sm rounded-lg bg-primary text-on-primary shadow-sm hover:bg-primary/90 transition-all group mx-sm">
+<button aria-label="Share Screen" class="flex flex-col items-center justify-center px-md py-sm rounded-lg bg-primary text-on-primary shadow-sm hover:bg-primary/90 transition-all group mx-sm">
 <span class="material-symbols-outlined text-[24px] group-hover:-translate-y-0.5 transition-transform">present_to_all</span>
 <span class="font-label-sm text-label-sm mt-xs font-semibold">Share Screen</span>
 </button>
@@ -199,9 +199,9 @@
 </div>
 <!-- Right Controls (End) -->
 <div class="flex items-center">
-<button class="bg-error hover:bg-error/90 text-on-error font-headline-sm text-headline-sm px-lg py-sm rounded-lg shadow-sm transition-colors flex items-center gap-sm">
-                End
-            </button>
+<button aria-label="Leave Meeting" class="bg-error hover:bg-error/90 text-on-error font-headline-sm text-headline-sm px-lg py-sm rounded-lg shadow-sm transition-colors flex items-center gap-sm">
+End
+</button>
 </div>
 </footer>
 </body></html>
