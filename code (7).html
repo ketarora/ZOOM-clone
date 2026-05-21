@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Streamline - Recordings Library</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config injected from Style Guidance -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "tertiary": "#9b2d00",
+                    "primary-container": "#0b5cff",
+                    "on-surface-variant": "#434656",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2e303a",
+                    "tertiary-fixed": "#ffdbd0",
+                    "on-primary-fixed-variant": "#003baf",
+                    "on-background": "#191b24",
+                    "on-primary-container": "#ecedff",
+                    "surface-container-high": "#e7e7f4",
+                    "primary": "#0046cc",
+                    "on-primary-fixed": "#00164e",
+                    "inverse-on-surface": "#eff0fd",
+                    "secondary": "#585f6c",
+                    "secondary-container": "#dce2f3",
+                    "primary-fixed": "#dce1ff",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#842500",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e1e1ef",
+                    "on-secondary-fixed-variant": "#404754",
+                    "surface-tint": "#0050e4",
+                    "surface": "#faf8ff",
+                    "secondary-fixed": "#dce2f3",
+                    "on-tertiary-fixed": "#3a0b00",
+                    "inverse-primary": "#b5c4ff",
+                    "tertiary-fixed-dim": "#ffb59e",
+                    "surface-container-highest": "#e1e1ef",
+                    "outline": "#737688",
+                    "on-secondary-fixed": "#151c27",
+                    "surface-dim": "#d9d9e6",
+                    "surface-container": "#ededfa",
+                    "background": "#faf8ff",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#b5c4ff",
+                    "outline-variant": "#c3c5d9",
+                    "on-tertiary-container": "#ffeae5",
+                    "tertiary-container": "#c53b00",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#5e6572",
+                    "surface-bright": "#faf8ff",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#f3f2ff",
+                    "on-surface": "#191b24"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "max-content-width": "1440px",
+                    "gutter": "20px",
+                    "xs": "4px",
+                    "base": "4px",
+                    "lg": "24px",
+                    "2xl": "48px",
+                    "md": "16px",
+                    "sm": "8px",
+                    "sidebar-width": "280px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Ambient Shadow Utility for Cards */
+        .ambient-shadow {
+            box-shadow: 0px 1px 3px rgba(0,0,0,0.05), 0px 10px 15px -3px rgba(0,0,0,0.02);
+        }
+        .ambient-shadow-hover:hover {
+            box-shadow: 0px 10px 25px -5px rgba(0,0,0,0.1), 0px 8px 10px -6px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md h-screen overflow-hidden flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex bg-surface text-primary font-label-md docked left-0 h-full w-sidebar-width border-r border-outline-variant flat no shadows fixed left-0 top-0 h-full flex-col py-lg z-40 transition-all duration-200 ease-in-out shrink-0">
+<div class="px-md mb-xl flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[18px]">corporate_fare</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm font-bold text-primary">Enterprise</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Global Communications</div>
+</div>
+</div>
+<div class="px-md mb-lg">
+<button class="w-full bg-[#0B5CFF] hover:bg-[#0046D5] text-white py-2 px-4 rounded-lg flex items-center justify-center gap-2 transition-colors duration-200 font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                New Meeting
+            </button>
+</div>
+<div class="flex-1 overflow-y-auto space-y-[12px]">
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="video_call">video_call</span>
+                Meetings
+            </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat_bubble">chat_bubble</span>
+                Team Chat
+            </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="contact_page">contact_page</span>
+                Contacts
+            </a>
+<!-- Added Recordings as active based on intent -->
+<a class="flex items-center gap-md px-md py-sm text-primary bg-primary-container/10 border-l-4 border-primary transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="movie" data-weight="fill">movie</span>
+                Recordings
+            </a>
+</div>
+<div class="mt-auto space-y-[12px] pt-lg border-t border-outline-variant/30">
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="contact_support">contact_support</span>
+                Support
+            </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span>
+                Sign Out
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:ml-sidebar-width h-full">
+<!-- TopNavBar -->
+<header class="bg-surface text-primary font-body-md text-body-md docked full-width top-0 border-b border-outline-variant flat no shadows transition-colors duration-200 flex justify-between items-center w-full px-md h-16 z-50 shrink-0">
+<!-- Mobile Menu & Brand -->
+<div class="flex items-center gap-sm md:hidden">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-headline-md text-headline-md font-bold text-primary">Streamline</div>
+</div>
+<div class="hidden md:block font-headline-md text-headline-md font-bold text-primary">Streamline</div>
+<!-- Search (on_left configuration) -->
+<div class="flex-1 max-w-md mx-lg hidden md:block">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg py-2 pl-10 pr-4 text-body-md focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all placeholder:text-on-surface-variant/70 text-on-surface" placeholder="Search recordings, meetings..." type="text"/>
+</div>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-sm">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border border-surface"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors hidden md:block">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors hidden md:block">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="ml-sm w-8 h-8 rounded-full bg-secondary-container overflow-hidden border border-outline-variant/30 cursor-pointer hover:ring-2 hover:ring-primary/20 transition-all">
+<img alt="User profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ10e99Ob_dpa7Y8xxB4A6n_J_xD4h1Tj18nsidRX-pRO0mckyoQEIMeEGYMYI58nc1WS-89QF9PYE4K1rkPw7a0T2oN9wkuOYs_qpo7QIeYwhmqEiUkQqbq1t23ig3Y4ndeHQtKpO9uuHwJy6WWiDmfbgEvoQjkVnHXWep22KfQtLE91CDTH0ARgYj_rFo-EGtwGkxLsah8cOtiWGtdWs8bsI0sSp9KSqCKZ5SKyF1swcflt_9JMy-r76fz2-92VWmI1DSCQLDB4"/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<main class="flex-1 overflow-y-auto bg-background p-md lg:p-lg">
+<div class="max-w-max-content-width mx-auto">
+<!-- Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-lg gap-4">
+<div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-2">Recordings</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage and share your recorded meetings.</p>
+</div>
+</div>
+<!-- Tabs & Filters -->
+<div class="bg-surface rounded-xl ambient-shadow p-4 mb-lg border border-outline-variant/30">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<!-- Tabs -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg border border-outline-variant/50">
+<button class="px-4 py-1.5 rounded-md bg-white shadow-sm font-label-md text-label-md text-primary font-bold">
+                                Cloud Recordings
+                            </button>
+<button class="px-4 py-1.5 rounded-md text-on-surface-variant hover:bg-surface-container transition-colors font-label-md text-label-md">
+                                Local Recordings
+                            </button>
+</div>
+<!-- Filters -->
+<div class="flex items-center gap-sm w-full md:w-auto">
+<div class="relative w-full md:w-auto">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">calendar_month</span>
+<select class="w-full md:w-auto appearance-none bg-surface border border-outline-variant rounded-lg py-2 pl-9 pr-8 text-body-sm focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-on-surface">
+<option>Last 30 Days</option>
+<option>Last 7 Days</option>
+<option>This Year</option>
+<option>Custom Range...</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[18px]">arrow_drop_down</span>
+</div>
+<div class="relative w-full md:w-auto hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">person</span>
+<select class="w-full md:w-auto appearance-none bg-surface border border-outline-variant rounded-lg py-2 pl-9 pr-8 text-body-sm focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-on-surface">
+<option>All Hosts</option>
+<option>My Recordings</option>
+<option>Shared with me</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[18px]">arrow_drop_down</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Grid Layout for Recordings (Bento/Card Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-lg">
+<!-- Recording Card 1 -->
+<div class="bg-surface rounded-xl border border-outline-variant ambient-shadow ambient-shadow-hover transition-all duration-200 overflow-hidden group flex flex-col">
+<div class="relative aspect-video bg-surface-container-high overflow-hidden">
+<img alt="Q4 Planning Session Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern, high-key corporate meeting room setting seen through a clean video call interface. Four diverse professionals are visible in a sleek grid layout. The lighting is bright and even, casting soft shadows that fit a minimalist, blue-accented light-mode aesthetic. The mood is collaborative and focused, with a polished, utilitarian vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_51FfvB9CL6pk99cji0DKI-KF8pt_X8mMKfg4LDJnfjW8UZZdIqDtSEelEEwwKs4WuaS6aFFouF8rUOsu8tJwjIwH7kqnILLv1gO3O1enWZT1HzmWRr_N8TIJ7s1DvdQovd-snl-CbC0YbfQRrePdYb0lfi57azkZllI-DJqYmtpqXFcknsx7JJGCM8giPKeIP3iQZgZJnON0a5UNybNVTpSC3iwkBMEZYzJKctYDQCZ0CH3j5UeBj1q0CtNRp0FeXa1fkEqJbJ8"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+<!-- Play Button Overlay -->
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-primary shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]" data-weight="fill">play_arrow</span>
+</button>
+</div>
+<!-- Duration Badge -->
+<div class="absolute bottom-2 right-2 bg-on-surface/80 text-white font-label-sm text-label-sm px-2 py-1 rounded backdrop-blur-md">
+                                45:20
+                            </div>
+</div>
+<div class="p-lg flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate pr-2">Q4 Planning Session</h3>
+<div class="bg-success-container/20 text-[#006b54] border border-[#006b54]/20 font-label-sm text-label-sm px-2 py-0.5 rounded-full whitespace-nowrap bg-[#E6F4F1]">
+                                    Ready
+                                </div>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                                Oct 15, 2023 • 10:00 AM
+                            </div>
+<div class="flex items-center gap-2 mb-4">
+<div class="w-6 h-6 rounded-full overflow-hidden">
+<img alt="Host" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoDTKxkUsuFKVQycQpeeccK99RMRBSL_LUgQ-3cTAUWrK-EqBRXFUPco_nDtBosNekXRzeChLQlh6nohnAJx0OJuk9VIfRsyJ2p3MGK6k9oZinKeYvYq03XOegZlT4e5qaxQvfvqS6o-C1jQ9XLgc_-DdvH8PL_QaB-P4RTF43LQu9RJyx9FBgMvBwyNhIDJ51foU4MqPs5SnSjRRQdeNOyjJbtLxuA7pxHZ_8i5Anojw7unXWVhey11c3x6SAojbSTG3Ta0zd1WQ"/>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Hosted by You</span>
+<span class="font-label-sm text-label-sm text-outline mx-1">•</span>
+<span class="font-label-sm text-label-sm text-secondary">245 MB</span>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant/30 flex justify-between items-center">
+<button class="font-label-md text-label-md text-primary hover:text-[#0046D5] flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[18px]">share</span>
+                                    Share
+                                </button>
+<div class="flex gap-2">
+<button class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-md transition-colors tooltip-trigger" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:bg-error-container hover:text-error rounded-md transition-colors tooltip-trigger" title="Delete">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Recording Card 2 -->
+<div class="bg-surface rounded-xl border border-outline-variant ambient-shadow ambient-shadow-hover transition-all duration-200 overflow-hidden group flex flex-col">
+<div class="relative aspect-video bg-surface-container-high overflow-hidden">
+<img alt="Product Sync Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean, modern presentation slide displayed on a screen during a virtual meeting. The slide features minimalist charts and sans-serif typography in a light-mode color palette with subtle blue accents. The lighting is crisp and even, conveying a professional, efficient corporate environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFegSw2-CDEO_JnTaDw8ND3Ws6OnFyTrVnb81Qln5D3npiXY-i5HJmQHP6WEjhw0dNuL0CZtp5vWuusFHq9nHJ3M-hCni-JIPnFb4v80TyOyhzAu86PtCwy_9oY-CvbNshZUAiXZA6272km3USsLd6uucJSQnNT89Wg8QMTe2uGJiCXQD5vxJbCK46V2P-uWAx5nkM69YbABHFRYIJ67gAwIC2uMKRDlmG8E5xCbFHkVsWf0b84n20qlkQqEqOVZMOwVZsaQQSa-8"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-primary shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]" data-weight="fill">play_arrow</span>
+</button>
+</div>
+<div class="absolute bottom-2 right-2 bg-on-surface/80 text-white font-label-sm text-label-sm px-2 py-1 rounded backdrop-blur-md">
+                                22:15
+                            </div>
+</div>
+<div class="p-lg flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate pr-2">Weekly Product Sync</h3>
+<div class="bg-success-container/20 text-[#006b54] border border-[#006b54]/20 font-label-sm text-label-sm px-2 py-0.5 rounded-full whitespace-nowrap bg-[#E6F4F1]">
+                                    Ready
+                                </div>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                                Oct 12, 2023 • 2:00 PM
+                            </div>
+<div class="flex items-center gap-2 mb-4">
+<div class="w-6 h-6 rounded-full overflow-hidden bg-primary-container text-on-primary flex items-center justify-center font-label-sm text-[10px]">
+                                    SJ
+                                </div>
+<span class="font-label-sm text-label-sm text-secondary">Sarah Jenkins</span>
+<span class="font-label-sm text-label-sm text-outline mx-1">•</span>
+<span class="font-label-sm text-label-sm text-secondary">128 MB</span>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant/30 flex justify-between items-center">
+<button class="font-label-md text-label-md text-primary hover:text-[#0046D5] flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[18px]">share</span>
+                                    Share
+                                </button>
+<div class="flex gap-2">
+<button class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-md transition-colors tooltip-trigger" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:bg-error-container hover:text-error rounded-md transition-colors tooltip-trigger" title="Delete">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Recording Card 3 (Processing State) -->
+<div class="bg-surface rounded-xl border border-outline-variant ambient-shadow ambient-shadow-hover transition-all duration-200 overflow-hidden group flex flex-col">
+<div class="relative aspect-video bg-surface-container-high overflow-hidden flex items-center justify-center bg-[#F1F5F9]">
+<span class="material-symbols-outlined text-outline text-[48px] opacity-50">movie</span>
+<!-- Duration Badge (Unknown) -->
+<div class="absolute bottom-2 right-2 bg-on-surface/50 text-white font-label-sm text-label-sm px-2 py-1 rounded backdrop-blur-md">
+                                --:--
+                            </div>
+</div>
+<div class="p-lg flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate pr-2 opacity-70">Client Onboarding: TechCorp</h3>
+<div class="bg-surface-dim text-on-surface-variant border border-outline-variant/30 font-label-sm text-label-sm px-2 py-0.5 rounded-full whitespace-nowrap flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] animate-spin">sync</span>
+                                    Processing
+                                </div>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mb-4 opacity-70">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                                Oct 18, 2023 • 9:00 AM (Just now)
+                            </div>
+<div class="flex items-center gap-2 mb-4 opacity-70">
+<div class="w-6 h-6 rounded-full overflow-hidden">
+<img alt="Host" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSRfTXLkvvYYtHIqXml7TB5hKWafeCAosAuZ6Igu6kq1eYNrMVsc1YOkiwCCG3jpHSYan8r6SGgSsgiG00SGUDSxbca1mxj3V9MpF2UmdlEpqYylA39nVz9AVTO0IaciXuU95U0-K5OTgNVOlIQ9xhaaCktLa4dq6PPko3zNzfT6jdMaWJvkZcT7zYy-KTxP-R-LZSx4CTjVjWCUPF6yvEL7RQQQNENDZ0vquy8QHpkN1B0sz_vOdd-Gs692uZSsKAmrxcVcGdsO0"/>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Hosted by You</span>
+<span class="font-label-sm text-label-sm text-outline mx-1">•</span>
+<span class="font-label-sm text-label-sm text-secondary">Calculating...</span>
+</div>
+<!-- Progress Bar for processing -->
+<div class="w-full bg-surface-container-high rounded-full h-1.5 mb-4 mt-auto">
+<div class="bg-primary h-1.5 rounded-full" style="width: 45%"></div>
+</div>
+<div class="pt-4 border-t border-outline-variant/30 flex justify-between items-center">
+<button class="font-label-md text-label-md text-outline flex items-center gap-1 cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-[18px]">share</span>
+                                    Share
+                                </button>
+<div class="flex gap-2">
+<button class="p-1.5 text-outline rounded-md cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-1.5 text-outline rounded-md cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-lg flex justify-center items-center gap-2">
+<button class="w-8 h-8 rounded-md bg-surface border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-md bg-primary-container text-on-primary flex items-center justify-center font-label-md text-label-md font-bold">1</button>
+<button class="w-8 h-8 rounded-md bg-surface border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors font-label-md text-label-md">2</button>
+<button class="w-8 h-8 rounded-md bg-surface border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors font-label-md text-label-md">3</button>
+<span class="text-on-surface-variant px-1">...</span>
+<button class="w-8 h-8 rounded-md bg-surface border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors disabled:opacity-50">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

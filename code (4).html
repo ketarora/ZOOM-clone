@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Schedule Meeting - ZoomConnect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "on-surface": "#191b24",
+                        "inverse-surface": "#2e303a",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f3f2ff",
+                        "secondary": "#585f6c",
+                        "inverse-on-surface": "#eff0fd",
+                        "on-tertiary-fixed-variant": "#842500",
+                        "primary-fixed": "#dce1ff",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#faf8ff",
+                        "tertiary-fixed-dim": "#ffb59e",
+                        "surface-container": "#ededfa",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#dce2f3",
+                        "on-secondary-fixed-variant": "#404754",
+                        "tertiary-container": "#c53b00",
+                        "primary-fixed-dim": "#b5c4ff",
+                        "on-secondary-fixed": "#151c27",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#00164e",
+                        "on-tertiary": "#ffffff",
+                        "background": "#faf8ff",
+                        "primary-container": "#0b5cff",
+                        "surface": "#faf8ff",
+                        "surface-container-high": "#e7e7f4",
+                        "primary": "#0046cc",
+                        "on-background": "#191b24",
+                        "surface-variant": "#e1e1ef",
+                        "outline": "#737688",
+                        "on-tertiary-fixed": "#3a0b00",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffdbd0",
+                        "on-secondary-container": "#5e6572",
+                        "surface-tint": "#0050e4",
+                        "surface-container-highest": "#e1e1ef",
+                        "secondary-container": "#dce2f3",
+                        "on-surface-variant": "#434656",
+                        "tertiary": "#9b2d00",
+                        "on-primary-container": "#ecedff",
+                        "on-primary-fixed-variant": "#003baf",
+                        "outline-variant": "#c3c5d9",
+                        "inverse-primary": "#b5c4ff",
+                        "on-tertiary-container": "#ffeae5",
+                        "surface-dim": "#d9d9e6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "sidebar-width": "280px",
+                        "md": "16px",
+                        "max-content-width": "1440px",
+                        "gutter": "20px",
+                        "2xl": "48px",
+                        "sm": "8px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #0046cc;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #0046cc;
+        }
+        .toggle-checkbox:checked + .toggle-label:after {
+            transform: translateX(100%);
+            border-color: white;
+        }
+        .toggle-label {
+            width: 40px;
+            height: 24px;
+            background-color: #c3c5d9;
+            border-radius: 9999px;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .toggle-label:after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.2s ease-in-out;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased h-screen overflow-hidden flex">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-lg z-50 overflow-y-auto w-sidebar-width bg-surface dark:bg-surface-container-low border-r border-outline-variant dark:border-outline hidden md:flex">
+<div class="px-lg mb-xl flex items-center gap-md">
+<div class="w-8 h-8 rounded bg-primary-container text-on-primary-container flex items-center justify-center font-bold">P</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary">Pro Workspace</h2>
+<p class="font-label-sm text-label-sm text-secondary">Enterprise Tier</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-sm">
+<a class="flex items-center gap-md px-lg py-sm text-primary dark:text-primary-fixed bg-primary-container/5 border-l-4 border-primary cursor-pointer group hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex items-center gap-md px-lg py-sm text-secondary dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-highest cursor-pointer group hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all duration-200" href="#">
+<span class="material-symbols-outlined">video_camera_front</span>
+<span class="font-label-md text-label-md">Meetings</span>
+</a>
+<a class="flex items-center gap-md px-lg py-sm text-secondary dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-highest cursor-pointer group hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all duration-200" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-label-md text-label-md">Team Chat</span>
+</a>
+<a class="flex items-center gap-md px-lg py-sm text-secondary dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-highest cursor-pointer group hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all duration-200" href="#">
+<span class="material-symbols-outlined">contacts</span>
+<span class="font-label-md text-label-md">Contacts</span>
+</a>
+<a class="flex items-center gap-md px-lg py-sm text-secondary dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-highest cursor-pointer group hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-sm pt-lg border-t border-outline-variant mx-lg">
+<a class="flex items-center gap-md px-md py-sm text-secondary dark:text-outline-variant hover:bg-surface-container-high cursor-pointer group transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-md text-label-md">Help</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-secondary dark:text-outline-variant hover:bg-surface-container-high cursor-pointer group transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md">Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col min-w-0 md:ml-sidebar-width overflow-hidden">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center h-16 px-lg w-full z-40 sticky top-0 bg-surface dark:bg-surface-container-high shadow-sm font-headline-sm text-headline-sm font-body-md text-body-md text-primary dark:text-primary-fixed">
+<div class="flex items-center gap-md">
+<button class="md:hidden text-secondary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">ZoomConnect</div>
+</div>
+<div class="flex-1 max-w-md mx-lg hidden md:block">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-highest border-none rounded-full py-2 pl-10 pr-4 text-on-surface focus:ring-2 focus:ring-primary focus:bg-surface transition-colors font-body-sm text-body-sm" placeholder="Search" type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-2 text-secondary dark:text-outline hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined">signal_cellular_alt</span>
+</button>
+<button class="p-2 text-secondary dark:text-outline hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-secondary dark:text-outline hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full cursor-pointer active:opacity-80 hidden md:block">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="ml-sm w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center cursor-pointer font-bold text-sm" title="User Profile Avatar">
+                    U
+                </div>
+</div>
+</header>
+<!-- Main Scrollable Area -->
+<main class="flex-1 overflow-y-auto p-md md:p-xl bg-background flex justify-center items-start">
+<!-- Schedule Meeting Card -->
+<div class="w-full max-w-3xl bg-surface rounded-xl shadow-[0px_1px_3px_rgba(0,0,0,0.05),_0px_10px_15px_-3px_rgba(0,0,0,0.02)] border border-outline-variant overflow-hidden">
+<!-- Card Header -->
+<div class="px-lg py-md border-b border-outline-variant flex items-center justify-between bg-surface-bright">
+<h1 class="font-headline-md text-headline-md text-on-surface">Schedule Meeting</h1>
+<button class="p-1 text-secondary hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Form Content -->
+<div class="p-lg md:p-xl space-y-xl">
+<!-- General Section -->
+<div class="space-y-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">General</h3>
+<div class="space-y-sm">
+<label class="block font-label-md text-label-md text-on-surface-variant" for="topic">Meeting Topic</label>
+<input class="w-full bg-surface border border-outline-variant rounded-lg px-3 py-2 text-on-surface font-body-md focus:border-primary focus:ring-2 focus:ring-primary-container/30 transition-all outline-none" id="topic" type="text" value="Product Sync"/>
+</div>
+<div class="space-y-sm">
+<label class="block font-label-md text-label-md text-on-surface-variant" for="description">Description (Optional)</label>
+<textarea class="w-full bg-surface border border-outline-variant rounded-lg px-3 py-2 text-on-surface font-body-md focus:border-primary focus:ring-2 focus:ring-primary-container/30 transition-all outline-none resize-none" id="description" placeholder="Brief agenda..." rows="2"></textarea>
+</div>
+</div>
+<hr class="border-outline-variant/50"/>
+<!-- Timing Section -->
+<div class="space-y-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Timing</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="space-y-sm">
+<label class="block font-label-md text-label-md text-on-surface-variant" for="date">Date</label>
+<div class="relative">
+<input class="w-full bg-surface border border-outline-variant rounded-lg px-3 py-2 text-on-surface font-body-md focus:border-primary focus:ring-2 focus:ring-primary-container/30 transition-all outline-none" id="date" type="date"/>
+</div>
+</div>
+<div class="space-y-sm">
+<label class="block font-label-md text-label-md text-on-surface-variant" for="time">Time</label>
+<input class="w-full bg-surface border border-outline-variant rounded-lg px-3 py-2 text-on-surface font-body-md focus:border-primary focus:ring-2 focus:ring-primary-container/30 transition-all outline-none" id="time" type="time"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="space-y-sm">
+<label class="block font-label-md text-label-md text-on-surface-variant" for="duration">Duration</label>
+<select class="w-full bg-surface border border-outline-variant rounded-lg px-3 py-2 text-on-surface font-body-md focus:border-primary focus:ring-2 focus:ring-primary-container/30 transition-all outline-none appearance-none" id="duration">
+<option>30 Minutes</option>
+<option selected="">1 Hour</option>
+<option>1 Hour 30 Minutes</option>
+<option>2 Hours</option>
+</select>
+</div>
+<div class="space-y-sm">
+<label class="block font-label-md text-label-md text-on-surface-variant" for="timezone">Time Zone</label>
+<select class="w-full bg-surface border border-outline-variant rounded-lg px-3 py-2 text-on-surface font-body-md focus:border-primary focus:ring-2 focus:ring-primary-container/30 transition-all outline-none appearance-none" id="timezone">
+<option>(GMT-08:00) Pacific Time</option>
+<option selected="">(GMT-05:00) Eastern Time</option>
+<option>(GMT+00:00) London</option>
+</select>
+</div>
+</div>
+</div>
+<hr class="border-outline-variant/50"/>
+<!-- Security Section -->
+<div class="space-y-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Security</h3>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md space-y-md">
+<!-- Passcode Toggle -->
+<div class="flex items-start justify-between gap-md">
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Passcode</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Require a passcode to join the meeting.</p>
+<div class="mt-2 flex items-center gap-2">
+<input class="w-24 bg-surface-variant border-none rounded px-2 py-1 text-on-surface-variant font-body-sm text-body-sm focus:outline-none" readonly="" type="text" value="847392"/>
+<button class="text-primary hover:text-primary-container text-sm font-label-md">Edit</button>
+</div>
+</div>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in mt-1">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer opacity-0 z-10" id="passcode-toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer" for="passcode-toggle"></label>
+</div>
+</div>
+<hr class="border-outline-variant/50"/>
+<!-- Waiting Room Toggle -->
+<div class="flex items-start justify-between gap-md">
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Waiting Room</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Only users admitted by the host can join.</p>
+</div>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in mt-1">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer opacity-0 z-10" id="waiting-room-toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer" for="waiting-room-toggle"></label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="px-lg py-md border-t border-outline-variant bg-surface-bright flex items-center justify-end gap-md">
+<button class="px-4 py-2 font-label-md text-label-md text-secondary hover:bg-surface-container-high rounded-lg transition-colors">
+                        Cancel
+                    </button>
+<button class="px-6 py-2 font-label-md text-label-md bg-primary text-on-primary hover:bg-[#003baf] rounded-lg transition-colors shadow-sm">
+                        Schedule
+                    </button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

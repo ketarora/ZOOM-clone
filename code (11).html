@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contacts - Streamline</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#191b24",
+                        "tertiary-container": "#c53b00",
+                        "tertiary-fixed": "#ffdbd0",
+                        "outline": "#737688",
+                        "surface-container": "#ededfa",
+                        "surface-dim": "#d9d9e6",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#404754",
+                        "on-tertiary-fixed-variant": "#842500",
+                        "on-secondary-container": "#5e6572",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#2e303a",
+                        "tertiary-fixed-dim": "#ffb59e",
+                        "surface-variant": "#e1e1ef",
+                        "surface-tint": "#0050e4",
+                        "secondary": "#585f6c",
+                        "on-secondary-fixed": "#151c27",
+                        "on-primary-fixed": "#00164e",
+                        "secondary-fixed": "#dce2f3",
+                        "primary-fixed-dim": "#b5c4ff",
+                        "tertiary": "#9b2d00",
+                        "on-tertiary-container": "#ffeae5",
+                        "surface-container-high": "#e7e7f4",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#191b24",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#dce1ff",
+                        "secondary-container": "#dce2f3",
+                        "background": "#faf8ff",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#b5c4ff",
+                        "surface-bright": "#faf8ff",
+                        "on-surface-variant": "#434656",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "surface-container-low": "#f3f2ff",
+                        "surface-container-highest": "#e1e1ef",
+                        "on-primary-container": "#ecedff",
+                        "on-primary-fixed-variant": "#003baf",
+                        "inverse-on-surface": "#eff0fd",
+                        "surface": "#faf8ff",
+                        "primary": "#0046cc",
+                        "primary-container": "#0b5cff",
+                        "outline-variant": "#c3c5d9",
+                        "on-tertiary-fixed": "#3a0b00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "max-content-width": "1440px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "sidebar-width": "280px",
+                        "xs": "4px",
+                        "2xl": "48px",
+                        "lg": "24px",
+                        "gutter": "20px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "display-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                        "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .contact-card:hover .quick-actions {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="h-full flex overflow-hidden bg-background text-on-background font-body-md text-body-md antialiased">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-full flex flex-col py-lg z-40 bg-surface dark:bg-inverse-surface border-r border-outline-variant dark:border-outline docked left-0 h-full w-sidebar-width hidden md:flex">
+<!-- Brand Header -->
+<div class="px-md mb-xl flex items-center gap-sm">
+<div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="videocam">videocam</span>
+</div>
+<div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary">Enterprise</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Global Communications</p>
+</div>
+</div>
+<!-- CTA -->
+<div class="px-md mb-lg">
+<button class="w-full bg-primary-container text-on-primary py-2 px-4 rounded-lg font-label-md text-label-md hover:bg-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                New Meeting
+            </button>
+</div>
+<!-- Main Navigation -->
+<div class="flex-1 overflow-y-auto px-xs space-y-xs">
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-lg mx-2" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-lg mx-2" href="#">
+<span class="material-symbols-outlined" data-icon="video_call">video_call</span>
+                Meetings
+            </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-lg mx-2" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+                Team Chat
+            </a>
+<a class="flex items-center gap-md px-md py-sm text-primary bg-primary-container/10 border-l-4 border-primary transition-all duration-200 ease-in-out rounded-r-lg ml-0 mr-2" href="#">
+<span class="material-symbols-outlined icon-fill" data-icon="contact_page">contact_page</span>
+                Contacts
+            </a>
+</div>
+<!-- Footer Navigation -->
+<div class="px-xs space-y-xs pt-lg border-t border-outline-variant mt-auto">
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-lg mx-2" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+                Support
+            </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-lg mx-2" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Sign Out
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:ml-[280px] h-full overflow-hidden">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center w-full px-md h-16 z-50 bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline docked full-width top-0">
+<div class="flex items-center gap-sm md:hidden">
+<span class="material-symbols-outlined text-primary text-[24px]" data-icon="menu">menu</span>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Streamline</span>
+</div>
+<!-- Search -->
+<div class="flex-1 max-w-xl hidden md:flex ml-4">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg text-body-sm font-body-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-on-surface placeholder:text-on-surface-variant/70" placeholder="Search Streamline" type="text"/>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-md">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container transition-colors duration-200 rounded-full relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container transition-colors duration-200 rounded-full hidden sm:block">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container transition-colors duration-200 rounded-full hidden sm:block">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant cursor-pointer ml-sm shrink-0">
+<img alt="User profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy9_rlDa-xzroBgrQBIIxqmd1XOHbWckiuxvNvda_BOrswvRtcA4aBLulQG1SFWvtH0hcOJ7noGks8giHeNbxRDoW6skOUVTBlYaboau1MOzwfoN9f8cCKdzBvDFHNPeQLBjX4WsIkYSwBe0X5E0-b2H02KrJx7RCeLjekQkJq3CKvEWc3BAsFa1zW9trdhjPsh1s6JRyJ2fkyeImHNMHc5Vog4agTo4o0VcNfwalyXD7SPDrptbFZf7-WDlyCp5jK5-Zvx1b0fkc"/>
+</div>
+</div>
+</header>
+<!-- Contacts Workspace Split -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Inner Left Sidebar (Categories) -->
+<aside class="w-64 border-r border-outline-variant bg-surface-container-lowest hidden lg:flex flex-col overflow-y-auto">
+<div class="p-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-sm">Directory</h2>
+<div class="relative w-full mb-lg">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-outline text-[18px]" data-icon="search">search</span>
+<input class="w-full pl-8 pr-3 py-1.5 bg-surface-container border border-outline-variant rounded-md text-body-sm font-body-sm focus:outline-none focus:border-primary transition-all text-on-surface" placeholder="Find contact..." type="text"/>
+</div>
+<ul class="space-y-1 mb-xl">
+<li>
+<a class="flex items-center justify-between px-3 py-2 bg-primary/10 text-primary rounded-md font-body-sm text-body-sm font-medium" href="#">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="person">person</span>
+                                    My Contacts
+                                </div>
+<span class="text-xs bg-primary text-on-primary px-1.5 py-0.5 rounded-full">142</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-2 px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-md font-body-sm text-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="tag">tag</span>
+                                Channels
+                            </a>
+</li>
+<li>
+<a class="flex items-center gap-2 px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-md font-body-sm text-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="cloud">cloud</span>
+                                Cloud Contacts
+                            </a>
+</li>
+<li>
+<a class="flex items-center gap-2 px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-md font-body-sm text-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="public">public</span>
+                                External Contacts
+                            </a>
+</li>
+</ul>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-sm px-3">Groups</h3>
+<ul class="space-y-1">
+<li>
+<a class="flex items-center justify-between px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-md font-body-sm text-body-sm transition-colors" href="#">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+                                    Marketing
+                                </div>
+<span class="text-xs text-outline">24</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-md font-body-sm text-body-sm transition-colors" href="#">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+                                    Product
+                                </div>
+<span class="text-xs text-outline">18</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-md font-body-sm text-body-sm transition-colors" href="#">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                                    Engineering
+                                </div>
+<span class="text-xs text-outline">56</span>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+<!-- Main Contacts Grid -->
+<main class="flex-1 flex flex-col bg-background overflow-hidden">
+<!-- Content Header -->
+<div class="px-lg py-md border-b border-outline-variant bg-surface flex flex-wrap gap-4 items-center justify-between shrink-0">
+<div>
+<h2 class="font-display-lg text-display-lg text-on-surface">Contacts</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Manage your team and external connections.</p>
+</div>
+<div class="flex items-center gap-sm">
+<button class="flex items-center gap-2 text-primary font-body-sm text-body-sm font-medium hover:bg-primary/5 px-3 py-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="link">link</span>
+                            Copy Personal Link
+                        </button>
+<button class="bg-primary-container hover:bg-[#0046D5] text-on-primary font-label-md text-label-md px-4 py-2 rounded-lg transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="person_add">person_add</span>
+                            Add Contact
+                        </button>
+</div>
+</div>
+<!-- Grid Scroll Area -->
+<div class="flex-1 overflow-y-auto p-lg">
+<!-- Alphabetic Group: A -->
+<div class="mb-lg">
+<h3 class="font-headline-sm text-headline-sm text-on-surface-variant mb-md border-b border-outline-variant/50 pb-2">A</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-md">
+<!-- Contact Card 1 -->
+<div class="contact-card group bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex items-center gap-4 hover:shadow-sm transition-all duration-200 hover:-translate-y-0.5">
+<div class="relative shrink-0">
+<img alt="Sarah Jenkins" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUFT_xsP0PsMk40iPaX6VcRCSFdxJfzaTWMvG7Gs56rRANtKyfyJzhyEVw-DJGvOM6-RNwiNzSlF7_WUamMCPMLtZSMHGIzkUq6ftCLeT0f5W-r8r-nPUdg0W6FJJHPMXnUwOrzjrmOhqWIBhnBlvLsiyLDv3bJvwTnHguFGDs4L1wa6EmO2tdTSnwFNyWbGBytHlCFDJ4pxkKaica-RazxauzBZpHw2hxUstAOyWQY7KUM6yXIizGh8BKOewFeffNsLMcBxomu2I"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-surface-container-lowest rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Alice Freeman</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Product Marketing Manager</p>
+</div>
+<div class="quick-actions opacity-0 flex items-center gap-1 transition-opacity duration-200">
+<button class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-primary transition-colors" title="Chat">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat">chat</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-primary-container/10 hover:bg-primary-container/20 flex items-center justify-center text-primary transition-colors" title="Meet">
+<span class="material-symbols-outlined text-[18px]" data-icon="videocam">videocam</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Alphabetic Group: B -->
+<div class="mb-lg">
+<h3 class="font-headline-sm text-headline-sm text-on-surface-variant mb-md border-b border-outline-variant/50 pb-2">B</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-md">
+<!-- Contact Card 2 -->
+<div class="contact-card group bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex items-center gap-4 hover:shadow-sm transition-all duration-200 hover:-translate-y-0.5">
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-headline-md text-headline-md">
+                                        BJ
+                                    </div>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-gray-400 border-2 border-surface-container-lowest rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Brian Jones</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Senior Backend Engineer</p>
+</div>
+<div class="quick-actions opacity-0 flex items-center gap-1 transition-opacity duration-200">
+<button class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-primary transition-colors" title="Chat">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat">chat</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-primary-container/10 hover:bg-primary-container/20 flex items-center justify-center text-primary transition-colors" title="Meet">
+<span class="material-symbols-outlined text-[18px]" data-icon="videocam">videocam</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Alphabetic Group: R -->
+<div class="mb-lg">
+<h3 class="font-headline-sm text-headline-sm text-on-surface-variant mb-md border-b border-outline-variant/50 pb-2">R</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-md">
+<!-- Contact Card 3 -->
+<div class="contact-card group bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex items-center gap-4 hover:shadow-sm transition-all duration-200 hover:-translate-y-0.5">
+<div class="relative shrink-0">
+<img alt="Robert Fox" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ55mb7r2AEeZ9DJX0ndSI8254_XCbXvzgQts9ey36jUwXguzT7-r9_4o_mB0Y4iKwhzqfc2YywVimPBKaS7skXJsToiKkdkLc8VXBA5ABIErxQieHUuaFWoENkUNysk1Zp8G1xE539FycA5ShIRBHx1YGmZ38C4xN0GlHK2Fucy5hts36YN3uob7mIhi3x_qyln4trNzkLXLNqoqiEVwUNspRwNd3CHwJUZFGELyIgAmy4i1xmt_rWv7F6fh97-7tjPS5Awfqie4"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-surface-container-lowest rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Robert Fox</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Lead Developer</p>
+</div>
+<div class="quick-actions opacity-0 flex items-center gap-1 transition-opacity duration-200">
+<button class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-primary transition-colors" title="Chat">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat">chat</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-primary-container/10 hover:bg-primary-container/20 flex items-center justify-center text-primary transition-colors" title="Meet">
+<span class="material-symbols-outlined text-[18px]" data-icon="videocam">videocam</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Alphabetic Group: S -->
+<div class="mb-lg">
+<h3 class="font-headline-sm text-headline-sm text-on-surface-variant mb-md border-b border-outline-variant/50 pb-2">S</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-md">
+<!-- Contact Card 4 -->
+<div class="contact-card group bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex items-center gap-4 hover:shadow-sm transition-all duration-200 hover:-translate-y-0.5">
+<div class="relative shrink-0">
+<img alt="Sarah Jenkins" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZsaAbH_wc-PobaN_PyzlN8LeHhDEyMdIvNFvAgFc-PuIKoFN5tDgXpsY8dqungJogUTLCvxFz33Bol2vQGakcnPrjNXeHKrOgjmmi0qCYJbu_lpXJH2CbiJLBbSeoc-1uP7hG5dYUiEfRk82R8JtLh5mFBazt271zrA5SI_OnhQvJJaCWe68j_NSDR6-k0ck8ofugl4nPai3ma2UCNYHXvOpJ6C7MgSzPJbwaLcxjG4VL2JF_X4On1WXyFJ2RaGl0NBaDFc-343s"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-surface-container-lowest rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Sarah Jenkins</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Senior Designer</p>
+</div>
+<div class="quick-actions opacity-0 flex items-center gap-1 transition-opacity duration-200">
+<button class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-primary transition-colors" title="Chat">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat">chat</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-primary-container/10 hover:bg-primary-container/20 flex items-center justify-center text-primary transition-colors" title="Meet">
+<span class="material-symbols-outlined text-[18px]" data-icon="videocam">videocam</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>
