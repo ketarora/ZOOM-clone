@@ -140,6 +140,55 @@
             box-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
     </style>
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* === Schedule Meeting Page Enhancements === */
+  body { background: var(--bg) !important; }
+  nav  { background: var(--surface) !important; border-right: 1px solid var(--border) !important; }
+  header { background: var(--surface) !important; border-bottom: 1px solid var(--border) !important; box-shadow: none !important; }
+
+  /* Main schedule card */
+  .bg-surface-container-lowest, form > div { background: var(--surface) !important; }
+  .rounded-xl { border-radius: var(--r-lg) !important; }
+  .shadow-soft { box-shadow: var(--shadow-sm) !important; }
+
+  /* Form section headings */
+  h2.font-headline-md, h3.font-headline-sm { font-weight: 700 !important; color: var(--text-primary) !important; }
+
+  /* Inputs */
+  input[type="text"], input[type="date"], input[type="time"], select, textarea {
+    border: 1px solid var(--border) !important;
+    border-radius: var(--r-sm) !important;
+    padding: 10px 14px !important;
+    font-size: 13.5px !important;
+    color: var(--text-primary) !important;
+    transition: var(--t-base) !important;
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.1) !important;
+    outline: none !important;
+  }
+
+  /* Security section */
+  .border.rounded-lg { border: 1px solid var(--border) !important; border-radius: var(--r-md) !important; padding: 16px !important; }
+
+  /* Passcode badge */
+  .bg-surface-container-high { background: var(--surface-high) !important; border-radius: 6px !important; padding: 4px 10px !important; font-size: 13px !important; font-weight: 600 !important; }
+
+  /* Schedule / Save btn */
+  button[type="submit"], .btn-schedule {
+    background: var(--primary) !important;
+    color: #fff !important;
+    border-radius: var(--r-sm) !important;
+    font-weight: 600 !important;
+    padding: 11px 28px !important;
+    font-size: 13.5px !important;
+    box-shadow: var(--shadow-sm) !important;
+    transition: var(--t-base) !important;
+  }
+  button[type="submit"]:hover { background: var(--primary-dark) !important; transform: translateY(-1px) !important; box-shadow: var(--shadow-md) !important; }
+</style>
 </head>
 <body class="bg-background text-on-background font-body-md text-body-md antialiased h-screen overflow-hidden flex">
 <!-- SideNavBar -->

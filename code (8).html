@@ -125,6 +125,82 @@
             border-radius: 10px;
         }
     </style>
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* === Meeting Room Page Enhancements === */
+  body, html {
+    background: #111827 !important;
+    color: #f3f4f6 !important;
+    font-family: 'Inter', sans-serif !important;
+  }
+
+  /* Video grid tiles */
+  .bg-surface-container, .bg-surface-container-high, .bg-surface-container-highest {
+    background: #1f2937 !important;
+    border-radius: var(--r-md) !important;
+  }
+
+  /* Speaking/active tile outline */
+  .border-2.border-primary, .ring-2 { outline: 2px solid var(--primary) !important; }
+
+  /* Participant name label */
+  .bg-on-surface\/60, .bg-inverse-surface\/60, [class*="bg-on-surface"] {
+    background: rgba(0,0,0,0.6) !important;
+    backdrop-filter: blur(8px) !important;
+    border-radius: var(--r-full) !important;
+    padding: 4px 12px !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    color: #fff !important;
+  }
+
+  /* Bottom toolbar */
+  footer, [role="toolbar"], .toolbar {
+    background: #1a2332 !important;
+    border-top: 1px solid rgba(255,255,255,0.08) !important;
+    backdrop-filter: blur(12px) !important;
+  }
+
+  /* Toolbar buttons */
+  .toolbar-btn-room {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 8px 14px;
+    border-radius: var(--r-md);
+    background: rgba(255,255,255,0.07);
+    color: #d1d5db;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--t-fast);
+    min-width: 62px;
+  }
+  .toolbar-btn-room:hover { background: rgba(255,255,255,0.13); color: #fff; }
+
+  /* End call */
+  .bg-error { background: #dc2626 !important; border-radius: var(--r-sm) !important; font-weight: 700 !important; transition: var(--t-fast) !important; }
+  .bg-error:hover { background: #b91c1c !important; }
+
+  /* Chat sidebar */
+  .bg-surface-container-lowest, .bg-surface { background: #ffffff !important; color: var(--text-primary) !important; }
+
+  /* Chat input */
+  .bg-surface-container-low { background: #f3f4f6 !important; border: 1px solid var(--border) !important; border-radius: var(--r-sm) !important; }
+
+  /* Chat bubble (own) */
+  .bg-primary-container { background: var(--primary) !important; color: #fff !important; border-radius: var(--r-md) !important; border-bottom-right-radius: 4px !important; }
+
+  /* Share Screen active btn */
+  .bg-primary.text-on-primary { background: var(--primary) !important; border-radius: var(--r-sm) !important; }
+
+  /* Mute icon indicator */
+  .bg-error.rounded-full { background: var(--error) !important; }
+
+  /* Top bar of meeting room */
+  header { background: rgba(17,24,39,0.9) !important; border-bottom: 1px solid rgba(255,255,255,0.06) !important; backdrop-filter: blur(8px) !important; }
+</style>
 </head>
 <body class="h-screen w-screen overflow-hidden flex flex-col bg-on-surface text-surface font-body-md text-body-md select-none">
 <!-- Main Workspace Area -->

@@ -115,6 +115,74 @@
             scrollbar-width: none;  /* Firefox */
         }
     </style>
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* === Team Chat Page Enhancements === */
+  body { background: var(--bg) !important; }
+  nav  { background: var(--surface) !important; border-right: 1px solid var(--border) !important; }
+  header { background: var(--surface) !important; border-bottom: 1px solid var(--border) !important; box-shadow: none !important; }
+
+  /* Channel list panel */
+  .bg-surface-container-low { background: var(--surface) !important; }
+  .border-r { border-right: 1px solid var(--border) !important; }
+
+  /* Channel header (top of message area) */
+  .bg-surface-container-lowest { background: var(--surface) !important; }
+
+  /* Chat items */
+  .hover\:bg-surface-container-high:hover { background: var(--surface-high) !important; transition: var(--t-fast) !important; }
+  .bg-primary\/10, .bg-primary-container\/10 { background: var(--primary-light) !important; border-radius: var(--r-sm) !important; }
+  .text-primary { color: var(--primary) !important; }
+
+  /* Active channel */
+  .bg-primary-container\/20 { background: var(--primary-light) !important; border-radius: var(--r-sm) !important; }
+
+  /* Date separator */
+  .text-outline { color: var(--text-muted) !important; font-size: 12px !important; }
+
+  /* Message bubbles (own) */
+  .bg-primary-container.text-on-primary-container,
+  .bg-primary, .bg-primary-light {
+    background: var(--primary) !important;
+    color: #fff !important;
+    border-radius: var(--r-md) !important;
+    border-bottom-right-radius: 4px !important;
+  }
+
+  /* Code block */
+  .bg-surface-dim, .bg-inverse-surface {
+    background: #1f2937 !important;
+    color: #f3f4f6 !important;
+    border-radius: var(--r-md) !important;
+    font-family: 'Courier New', monospace !important;
+    font-size: 12.5px !important;
+  }
+
+  /* File attachment */
+  .bg-surface-variant { background: var(--surface-high) !important; border: 1px solid var(--border) !important; border-radius: var(--r-md) !important; }
+
+  /* Emoji reaction pills */
+  .bg-surface-container { background: var(--surface-high) !important; border: 1px solid var(--border) !important; border-radius: var(--r-full) !important; padding: 2px 10px !important; font-size: 13px !important; }
+
+  /* Formatting toolbar */
+  .bg-surface-container-high { background: var(--surface-high) !important; border-bottom: 1px solid var(--border) !important; }
+
+  /* Message input */
+  textarea { border: none !important; outline: none !important; resize: none !important; font-size: 13.5px !important; color: var(--text-primary) !important; }
+
+  /* Send button */
+  button.bg-primary { background: var(--primary) !important; border-radius: var(--r-sm) !important; font-weight: 600 !important; padding: 8px 16px !important; transition: var(--t-base) !important; }
+  button.bg-primary:hover { background: var(--primary-dark) !important; }
+
+  /* Meet / Call buttons in header */
+  .bg-primary-container:not(nav *) { background: var(--primary) !important; color: #fff !important; border-radius: var(--r-sm) !important; }
+  button.border { border: 1px solid var(--border) !important; border-radius: var(--r-sm) !important; transition: var(--t-fast) !important; }
+  button.border:hover { background: var(--surface-high) !important; }
+
+  /* Starred / Recent labels */
+  .text-secondary { color: var(--text-secondary) !important; }
+  .font-label-sm { font-size: 11px !important; font-weight: 600 !important; letter-spacing: 0.04em !important; }
+</style>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased overflow-hidden flex h-screen">
 <!-- SideNavBar (Predicted JSON) -->

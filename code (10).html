@@ -122,6 +122,57 @@
             background-size: 24px 24px;
         }
     </style>
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* === Whiteboard Page Enhancements === */
+  body { background: var(--bg) !important; }
+  nav  { background: var(--surface) !important; border-right: 1px solid var(--border) !important; }
+  header { background: var(--surface) !important; border-bottom: 1px solid var(--border) !important; box-shadow: none !important; }
+
+  /* Whiteboard canvas */
+  .whiteboard-grid {
+    background-color: #fafbfc !important;
+    background-image: radial-gradient(circle, #c8ccd4 1px, transparent 1px) !important;
+    background-size: 24px 24px !important;
+    flex: 1 !important;
+    position: relative !important;
+  }
+
+  /* Tool panel */
+  .bg-surface-container-lowest.rounded-xl,
+  .bg-surface.rounded-xl,
+  [class*="tool-panel"],
+  nav + div > div.rounded-xl,
+  div.rounded-xl.shadow {
+    background: var(--surface) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--r-lg) !important;
+    box-shadow: var(--shadow-md) !important;
+  }
+
+  /* Tool buttons */
+  .bg-surface-container-highest { background: var(--surface-high) !important; }
+  .bg-primary-container\/10 { background: var(--primary-light) !important; }
+  button.rounded-lg { border-radius: var(--r-sm) !important; transition: var(--t-fast) !important; }
+  button.rounded-lg:hover { background: var(--surface-high) !important; }
+
+  /* Sticky notes */
+  .bg-yellow-100, [style*="background: #fef"] { background: #fef9c3 !important; border-radius: var(--r-md) !important; box-shadow: var(--shadow-sm) !important; }
+  .bg-blue-50, [style*="background: #eff"] { background: #eff6ff !important; border-radius: var(--r-md) !important; box-shadow: var(--shadow-sm) !important; }
+
+  /* Flow nodes */
+  .border-2.rounded { border: 2px solid var(--border) !important; border-radius: var(--r-sm) !important; }
+
+  /* Bottom controls */
+  footer, .bottom-bar { background: var(--surface) !important; border-top: 1px solid var(--border) !important; box-shadow: 0 -1px 0 var(--border) !important; }
+  footer button, .bottom-bar button { border: 1px solid var(--border) !important; border-radius: var(--r-sm) !important; transition: var(--t-fast) !important; }
+
+  /* Share btn */
+  button.bg-primary, .btn-primary-wb { background: var(--primary) !important; color: #fff !important; border-radius: var(--r-sm) !important; font-weight: 600 !important; }
+
+  /* New Meeting btn */
+  [class*="bg-primary-container"] { background: var(--primary) !important; color: #fff !important; border-radius: var(--r-sm) !important; }
+</style>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased overflow-hidden flex h-screen w-full">
 <!-- Shared Component: SideNavBar -->

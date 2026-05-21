@@ -117,6 +117,58 @@
             opacity: 1;
         }
     </style>
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* === Contacts Page Enhancements === */
+  body { background: var(--bg) !important; }
+  nav  { background: var(--surface) !important; border-right: 1px solid var(--border) !important; }
+  header { background: var(--surface) !important; border-bottom: 1px solid var(--border) !important; box-shadow: none !important; }
+  main { background: var(--bg) !important; }
+
+  /* Directory sidebar */
+  .bg-surface-container-low, aside { background: var(--surface) !important; border-right: 1px solid var(--border) !important; }
+
+  /* Find contact search */
+  .rounded-full { border-radius: var(--r-full) !important; }
+  input[type="search"], input[placeholder*="contact"], input[placeholder*="Find"] {
+    border: 1px solid var(--border) !important;
+    border-radius: var(--r-full) !important;
+    padding: 8px 16px !important;
+    font-size: 13.5px !important;
+    background: var(--surface-low) !important;
+    width: 100% !important;
+    outline: none !important;
+    transition: var(--t-base) !important;
+  }
+  input[type="search"]:focus, input:focus { border-color: var(--primary) !important; box-shadow: 0 0 0 3px rgba(37,99,235,0.1) !important; }
+
+  /* Contact cards */
+  .contact-card, .rounded-xl.border { border: 1px solid var(--border) !important; border-radius: var(--r-md) !important; background: var(--surface) !important; transition: var(--t-fast) !important; box-shadow: var(--shadow-sm) !important; }
+  .contact-card:hover, .rounded-xl.border:hover { box-shadow: var(--shadow-md) !important; border-color: var(--border-strong) !important; }
+
+  /* Status dots */
+  .bg-green-500, .status-online { background: #16a34a !important; }
+  .bg-gray-400, .status-offline { background: #9ca3af !important; }
+
+  /* Nav items - My Contacts active */
+  [aria-current="page"], .text-primary { color: var(--primary) !important; }
+  .bg-primary-container\/10, .bg-primary\/10 { background: var(--primary-light) !important; border-radius: var(--r-sm) !important; }
+
+  /* Add Contact btn */
+  .bg-primary-container { background: var(--primary) !important; color: #fff !important; border-radius: var(--r-sm) !important; font-weight: 600 !important; box-shadow: var(--shadow-sm) !important; transition: var(--t-base) !important; }
+
+  /* Group dot colors */
+  .bg-error { background: var(--error) !important; }
+  .bg-primary { background: var(--primary) !important; }
+
+  /* Section letters */
+  .font-headline-sm.text-secondary { font-size: 13px !important; font-weight: 700 !important; color: var(--text-secondary) !important; letter-spacing: 0.02em !important; padding-bottom: 8px !important; border-bottom: 1px solid var(--border) !important; }
+
+  /* Copy link */
+  button.text-primary, a.text-primary { color: var(--primary) !important; font-weight: 500 !important; }
+  .quick-actions { opacity: 0; transition: var(--t-fast); }
+  .contact-card:hover .quick-actions { opacity: 1 !important; }
+</style>
 </head>
 <body class="h-full flex overflow-hidden bg-background text-on-background font-body-md text-body-md antialiased">
 <!-- SideNavBar -->

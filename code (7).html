@@ -128,6 +128,42 @@
             box-shadow: 0px 10px 25px -5px rgba(0,0,0,0.1), 0px 8px 10px -6px rgba(0,0,0,0.05);
         }
     </style>
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* === Recordings Page Enhancements === */
+  body { background: var(--bg) !important; }
+  nav  { background: var(--surface) !important; border-right: 1px solid var(--border) !important; }
+  header { background: var(--surface) !important; border-bottom: 1px solid var(--border) !important; box-shadow: none !important; }
+  main { background: var(--bg) !important; }
+
+  /* Recording cards */
+  .ambient-shadow { box-shadow: var(--shadow-sm) !important; }
+  .ambient-shadow-hover:hover { box-shadow: var(--shadow-hover) !important; transform: translateY(-2px) !important; transition: var(--t-base); }
+  .rounded-xl { border-radius: var(--r-lg) !important; }
+  .rounded-lg { border-radius: var(--r-md) !important; }
+
+  /* Status badges */
+  .bg-secondary-container.text-secondary { background: var(--success-light) !important; color: var(--success) !important; border-radius: var(--r-full) !important; padding: 3px 10px !important; font-size: 11px !important; font-weight: 600 !important; }
+
+  /* Duration overlay */
+  .absolute.bg-surface-dim, .absolute.rounded { background: rgba(0,0,0,0.65) !important; color: #fff !important; border-radius: 6px !important; }
+
+  /* Filter/sort buttons */
+  button.border, .border.rounded-lg { border: 1px solid var(--border) !important; border-radius: var(--r-sm) !important; transition: var(--t-fast) !important; }
+  button.border:hover { background: var(--surface-high) !important; }
+
+  /* Cloud/Local tab toggle */
+  .bg-primary { background: var(--primary) !important; color: #fff !important; border-radius: var(--r-sm) !important; font-weight: 600 !important; }
+
+  /* Share icon */
+  .text-primary { color: var(--primary) !important; }
+
+  /* Pagination */
+  button.rounded-lg { border-radius: var(--r-sm) !important; }
+
+  /* New Meeting btn */
+  [class*="bg-primary-container"] { background: var(--primary) !important; color: #fff !important; border-radius: var(--r-sm) !important; }
+</style>
 </head>
 <body class="bg-background text-on-surface font-body-md h-screen overflow-hidden flex">
 <!-- SideNavBar -->
