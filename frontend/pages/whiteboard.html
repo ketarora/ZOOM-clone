@@ -4,115 +4,114 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Whiteboard - ZoomConnect</title>
-<!-- Google Fonts & Material Symbols -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
-
-
-
-    <link rel="stylesheet" href="shared.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="../assets/css/shared.css"/>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased overflow-hidden flex h-screen w-full">
 <!-- Shared Component: SideNavBar -->
-<nav class="fixed left-0 top-0 h-full w-sidebar-width bg-surface border-r border-outline-variant no-shadow flex flex-col py-md gap-xs z-40">
-<!-- Header -->
-<div class="px-md pb-lg pt-sm flex items-center gap-sm">
-<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-primary" data-icon="corporate_fare">corporate_fare</span>
+<!-- Sidebar -->
+<nav class="hidden md:flex flex-col fixed left-0 top-0 h-full w-sidebar-width bg-surface border-r border-outline-variant py-lg z-50 overflow-y-auto">
+<div class="px-lg mb-xl flex items-center gap-md">
+<div class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center font-bold text-lg shadow-sm">
+Z
 </div>
-<div class="flex flex-col">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary">ZoomConnect</h2>
 <p class="font-label-md text-label-md text-secondary mt-base">Enterprise Workspace</p>
-<p class="font-label-md text-label-md text-secondary mt-base">Enterprise Workspace</p>
 </div>
 </div>
-<!-- CTA -->
-<div class="px-md mb-md">
-<button class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary py-2 px-4 rounded-lg hover:bg-[#0046D5] transition-colors font-label-md text-label-md shadow-sm">
-<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
-                New Meeting
-            </button>
+<div class="flex-1 px-md space-y-xs">
+<a class="nav-link flex items-center gap-md px-md py-sm rounded-md text-on-surface hover:bg-surface-container-high transition-colors" data-page="dashboard.html" href="dashboard.html">
+<span class="material-symbols-outlined text-icon-md">grid_view</span>
+<span class="font-label-lg text-label-lg font-medium">Dashboard</span>
+</a>
+<a class="nav-link flex items-center gap-md px-md py-sm rounded-md text-on-surface hover:bg-surface-container-high transition-colors" data-page="meetings.html" href="meetings.html">
+<span class="material-symbols-outlined text-icon-md">videocam</span>
+<span class="font-label-lg text-label-lg font-medium">Meetings</span>
+</a>
+<a class="nav-link flex items-center gap-md px-md py-sm rounded-md text-on-surface hover:bg-surface-container-high transition-colors" data-page="team-chat.html" href="team-chat.html">
+<span class="material-symbols-outlined text-icon-md">chat</span>
+<span class="font-label-lg text-label-lg font-medium">Team Chat</span>
+<span class="ml-auto bg-error text-on-error text-xs font-bold px-2 py-0.5 rounded-full">3</span>
+</a>
+<a class="nav-link flex items-center gap-md px-md py-sm rounded-md text-on-surface hover:bg-surface-container-high transition-colors" data-page="contacts.html" href="contacts.html">
+<span class="material-symbols-outlined text-icon-md">contacts</span>
+<span class="font-label-lg text-label-lg font-medium">Contacts</span>
+</a>
+<a class="nav-link flex items-center gap-md px-md py-sm rounded-md text-on-surface hover:bg-surface-container-high transition-colors" data-page="phone.html" href="phone.html">
+<span class="material-symbols-outlined text-icon-md">call</span>
+<span class="font-label-lg text-label-lg font-medium">Phone</span>
+</a>
+<a class="nav-link flex items-center gap-md px-md py-sm rounded-md text-on-surface hover:bg-surface-container-high transition-colors" data-page="recordings.html" href="recordings.html">
+<span class="material-symbols-outlined text-icon-md">radio_button_checked</span>
+<span class="font-label-lg text-label-lg font-medium">Recordings</span>
+</a>
+<a class="nav-link flex items-center gap-md px-md py-sm rounded-md text-on-surface hover:bg-surface-container-high transition-colors" data-page="whiteboard.html" href="whiteboard.html">
+<span class="material-symbols-outlined text-icon-md">draw</span>
+<span class="font-label-lg text-label-lg font-medium">Whiteboards</span>
+</a>
+<a class="nav-link flex items-center gap-md px-md py-sm rounded-md text-on-surface hover:bg-surface-container-high transition-colors" data-page="webinars.html" href="webinars.html">
+<span class="material-symbols-outlined text-icon-md">stream</span>
+<span class="font-label-lg text-label-lg font-medium">Webinars</span>
+</a>
+<a class="nav-link flex items-center gap-md px-md py-sm rounded-md text-on-surface hover:bg-surface-container-high transition-colors" data-page="settings.html" href="settings.html">
+<span class="material-symbols-outlined text-icon-md">settings</span>
+<span class="font-label-lg text-label-lg font-medium">Settings</span>
+</a>
 </div>
-<!-- Nav Items -->
-<div class="flex flex-col gap-xs px-sm flex-1 overflow-y-auto">
-<!-- Dashboard (Inactive) -->
-<a class="flex items-center gap-sm px-3 py-2 rounded-lg cursor-pointer transition-all duration-200 text-on-surface-variant hover:bg-surface-container-high border-l-4 border-transparent" href="#">
-<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
-<span class="font-label-md text-label-md">Dashboard</span>
-</a>
-<!-- Meetings (Inactive) -->
-<a class="flex items-center gap-sm px-3 py-2 rounded-lg cursor-pointer transition-all duration-200 text-on-surface-variant hover:bg-surface-container-high border-l-4 border-transparent" href="#">
-<span class="material-symbols-outlined text-[20px]" data-icon="video_call">video_call</span>
-<span class="font-label-md text-label-md">Meetings</span>
-</a>
-<!-- Team Chat (Inactive) -->
-<a class="flex items-center gap-sm px-3 py-2 rounded-lg cursor-pointer transition-all duration-200 text-on-surface-variant hover:bg-surface-container-high border-l-4 border-transparent" href="#">
-<span class="material-symbols-outlined text-[20px]" data-icon="forum">forum</span>
-<span class="font-label-md text-label-md">Team Chat</span>
-</a>
-<!-- Contacts (Inactive) -->
-<a class="flex items-center gap-sm px-3 py-2 rounded-lg cursor-pointer transition-all duration-200 text-on-surface-variant hover:bg-surface-container-high border-l-4 border-transparent" href="#">
-<span class="material-symbols-outlined text-[20px]" data-icon="contacts">contacts</span>
-<span class="font-label-md text-label-md">Contacts</span>
-</a>
-<!-- Phone (Inactive) -->
-<a class="flex items-center gap-sm px-3 py-2 rounded-lg cursor-pointer transition-all duration-200 text-on-surface-variant hover:bg-surface-container-high border-l-4 border-transparent" href="#">
-<span class="material-symbols-outlined text-[20px]" data-icon="phone">phone</span>
-<span class="font-label-md text-label-md">Phone</span>
-</a>
-<!-- Whiteboard (ACTIVE) -->
-<a class="flex items-center gap-sm px-3 py-2 rounded-lg cursor-pointer transition-all duration-200 bg-primary-container/10 text-primary border-l-4 border-primary" href="#">
-<span class="material-symbols-outlined text-[20px]" data-icon="edit_note" data-weight="fill" style="font-variation-settings: 'FILL' 1;">edit_note</span>
-<span class="font-label-md text-label-md font-bold">Whiteboard</span>
-</a>
-<!-- Settings (Inactive) -->
-<a class="flex items-center gap-sm px-3 py-2 rounded-lg cursor-pointer transition-all duration-200 text-on-surface-variant hover:bg-surface-container-high border-l-4 border-transparent mt-auto" href="#">
-<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
-<span class="font-label-md text-label-md">Settings</span>
-</a>
+<div class="px-md mt-xl border-t border-outline-variant pt-lg">
+<div class="flex items-center gap-md px-md py-sm rounded-md hover:bg-surface-container-high transition-colors cursor-pointer">
+<img alt="User" class="w-8 h-8 rounded-full" src="../assets/screenshots/photo_6086738626269090980_x.jpg" onerror="this.src='https://ui-avatars.com/api/?name=User&amp;background=0D8ABC&amp;color=fff';"/>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-label-md font-medium text-on-surface truncate">Alex Developer</p>
+<p class="text-xs text-secondary truncate">Pro Plan</p>
+</div>
+<span class="material-symbols-outlined text-icon-sm text-secondary">expand_more</span>
+</div>
 </div>
 </nav>
+<!-- End Sidebar -->
 <!-- Main Content Area (Offset by sidebar width) -->
 <main class="ml-[280px] flex-1 flex flex-col h-full relative">
 <!-- Shared Component: TopAppBar -->
-<header class="flex justify-between items-center w-full px-lg h-16 z-50 bg-surface text-primary border-b border-outline-variant shadow-sm shrink-0">
-<!-- Left: Brand & Search -->
-<div class="flex items-center gap-xl">
-<h2 class="font-headline-sm text-headline-sm font-bold text-primary">ZoomConnect</h2>
-<!-- Search Bar (on_left) -->
-<div class="relative w-64 hidden lg:block">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]" data-icon="search">search</span>
-<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="Search boards..." type="text"/>
-</div>
-</div>
-<!-- Right: Actions & Profile -->
-<div class="flex items-center gap-md">
-<!-- Share Button (Requested) -->
-<button class="flex items-center gap-2 bg-primary text-on-primary px-4 py-1.5 rounded-lg font-label-md text-label-md hover:bg-[#0046D5] transition-colors mr-2 shadow-sm">
-<span class="material-symbols-outlined text-[18px]" data-icon="share">share</span>
-                    Share
-                </button>
-<!-- Trailing Icons -->
-<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors cursor-pointer active:scale-95">
-<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
-</button>
-<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors cursor-pointer active:scale-95">
-<span class="material-symbols-outlined" data-icon="help">help</span>
-</button>
-<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors cursor-pointer active:scale-95 hidden sm:flex">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
-</button>
-<div class="w-px h-6 bg-outline-variant mx-2"></div>
-<!-- Profile Avatar -->
-<button class="w-9 h-9 rounded-full overflow-hidden border-2 border-surface hover:border-primary transition-colors cursor-pointer active:scale-95 shrink-0">
-<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a smiling man in a modern office environment. The lighting is soft and natural, casting a bright, optimistic mood suitable for a corporate application. The visual style is crisp and high-resolution, reinforcing a polished, enterprise-ready aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChIQIxtmtBVf9ooKPf2Aj6vmbAJBr9286Bgqygx1UQ7vpWQdTBsvWt_27iEWvInQBTqYVbUnBi6MX42YR-lvCpVp7coaMhHnRP7WcbyzLw4e1WZOTVIAV92Spso0cUHelk-rHBbEL1m0wD7zltvJOV404jkfI3txjRMaKWFNb859KEabv2n5NM4tE0Xdgzwqz6NX7ejnlZ18ek8ckiMasEdwplRzSpslLGnhqCBTzpTpuJOrrH9Wx_jT2Un1Odq6iNHNQC-ZJHKHw"/>
-</button>
-</div>
+<!-- Standard Topbar -->
+<header class="flex justify-between items-center h-16 px-lg w-full z-40 sticky top-0 bg-surface shadow-sm border-b border-outline-variant">
+    <!-- Brand / Search Area -->
+    <div class="flex items-center gap-xl flex-1">
+        <button class="md:hidden text-secondary hover:bg-surface-container-low p-2 rounded-full transition-colors flex items-center justify-center">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+        <h2 class="font-headline-sm text-headline-sm font-bold text-primary md:hidden">ZoomConnect</h2>
+
+        <!-- Global Search (Desktop) -->
+        <div class="hidden md:flex relative max-w-md w-full">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-sm">search</span>
+            <input class="w-full bg-surface-container-low border border-outline-variant rounded-full py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm transition-all text-on-surface placeholder:text-on-surface-variant/70" placeholder="Search ZoomConnect..." type="text"/>
+        </div>
+    </div>
+
+    <!-- Right Actions -->
+    <div class="flex items-center gap-sm">
+        <button class="p-2 rounded-full text-secondary hover:bg-surface-container-high transition-colors md:hidden">
+            <span class="material-symbols-outlined">search</span>
+        </button>
+        <button class="p-2 rounded-full text-secondary hover:bg-surface-container-high transition-colors relative">
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full border border-surface"></span>
+        </button>
+        <button class="p-2 rounded-full text-secondary hover:bg-surface-container-high transition-colors hidden sm:block">
+            <span class="material-symbols-outlined">help</span>
+        </button>
+        <div class="w-8 h-8 rounded-full ml-md overflow-hidden border border-outline-variant cursor-pointer hover:ring-2 hover:ring-primary/50 transition-all md:hidden">
+            <img alt="User profile" class="w-full h-full object-cover" src="../assets/screenshots/photo_6086738626269090980_x.jpg" onerror="this.src='https://ui-avatars.com/api/?name=User&background=0D8ABC&color=fff';"/>
+        </div>
+    </div>
 </header>
+<!-- End Standard Topbar -->
 <!-- Whiteboard Canvas Area -->
 <div class="flex-1 relative w-full h-full whiteboard-grid overflow-hidden cursor-crosshair group">
 <!-- Canvas Content (Mockup elements) -->
@@ -235,4 +234,5 @@
 </div>
 </div>
 </main>
+<script src="../assets/js/app.js"></script>
 </body></html>
