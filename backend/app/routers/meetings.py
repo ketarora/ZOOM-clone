@@ -137,8 +137,18 @@ def join_meeting(body: JoinMeetingRequest, db: Session = Depends(get_db)) -> dic
         raise HTTPException(status_code=404, detail="Meeting not found. Check the ID and try again.")
     if meeting.status == "ended":
         raise HTTPException(status_code=410, detail="This meeting has already ended.")
-    if meeting.use_passcode and body.passcode and meeting.passcode != body.passcode:
+    if meeting.use_passcode and meeting.passcode != (body.passcode or ""):
         raise HTTPException(status_code=403, detail="Incorrect passcode.")
+
+    from app.models.meeting import MeetingParticipant
+    from datetime import datetime, timezone
+    participant = MeetingParticipant(
+        meeting_id=meeting.id,
+        guest_name=body.name,
+        joined_at=datetime.now(timezone.utc),
+    )
+    db.add(participant)
+    db.commit()
     return {
         "status": "admitted" if not meeting.waiting_room else "waiting_room",
         "topic": meeting.topic,

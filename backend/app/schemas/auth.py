@@ -1,11 +1,21 @@
 from datetime import datetime
 from typing import Optional
 from pydantic import BaseModel, EmailStr, Field, field_validator
+from email_validator import validate_email, EmailNotValidError
 
 
 class UserRegister(BaseModel):
     display_name: str = Field(..., min_length=2, max_length=100)
     email: EmailStr
+
+    @field_validator("email")
+    @classmethod
+    def validate_email_strict(cls, v: str) -> str:
+        try:
+            emailinfo = validate_email(v, check_deliverability=False)
+            return emailinfo.normalized
+        except EmailNotValidError as e:
+            raise ValueError(str(e))
     password: str = Field(..., min_length=6, max_length=100)
     job_title: Optional[str] = Field(None, max_length=100)
     department: Optional[str] = Field(None, max_length=100)

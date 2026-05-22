@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+
+@theme inline {
+  --color-primary: #0B5CFF;
+  --color-primary-dark: #0046D5;
+  --color-primary-light: #EEF4FF;
+  --color-primary-container: #EEF4FF;
+  --color-on-primary-container: #002277;
+
+  --color-surface: #ffffff;
+  --color-surface-low: #f8f9fc;
+  --color-surface-high: #eef0f6;
+  --color-background: #f5f5f5;
+
+  --color-text-primary: #111827;
+  --color-text-secondary: #6b7280;
+  --color-text-muted: #9ca3af;
+
+  --color-border: #e5e7eb;
+  --color-border-strong: #d1d5db;
+
+  --color-error: #dc2626;
+  --color-error-light: #fee2e2;
+  --color-success: #16a34a;
+  --color-success-light: #dcfce7;
+  --color-warning: #d97706;
+  --color-orange: #F26D21;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 1px 2px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.10);
+
+  --font-sans: 'Inter', sans-serif;
+}
+
+:root {
+  --sidebar-w: 260px;
+  --topbar-h: 64px;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+}
+
+.btn-primary {
+  @apply bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2;
+}
+
+.btn-orange {
+  @apply bg-orange hover:bg-[#D45914] text-white font-semibold py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2;
+}
+
+.btn-secondary {
+  @apply bg-surface-high hover:bg-border text-text-primary font-semibold py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2;
+}
+
+.form-input {
+  @apply w-full bg-surface border border-border rounded-lg px-3 py-2 text-text-primary focus:border-primary focus:ring-2 focus:ring-primary-light transition-all outline-none;
+}
+
+.card {
+  @apply bg-surface rounded-xl border border-border overflow-hidden;
+}
