@@ -4,14 +4,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Schedule Meeting - ZoomConnect</title>
-
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-
-
-    <link rel="stylesheet" href="shared.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="../assets/css/shared.css"/>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-background text-on-background font-body-md text-body-md antialiased h-screen overflow-hidden flex">
 <!-- SideNavBar -->
@@ -59,34 +57,40 @@
 <!-- Main Content Wrapper -->
 <div class="flex-1 flex flex-col min-w-0 md:ml-sidebar-width overflow-hidden">
 <!-- TopNavBar -->
-<header class="flex justify-between items-center h-16 px-lg w-full z-40 sticky top-0 bg-surface dark:bg-surface-container-high shadow-sm font-headline-sm text-headline-sm font-body-md text-body-md text-primary dark:text-primary-fixed">
-<div class="flex items-center gap-md">
-<button class="md:hidden text-secondary">
-<span class="material-symbols-outlined">menu</span>
-</button>
-<h2 class="font-headline-sm text-headline-sm font-bold text-primary">ZoomConnect</h2>
-</div>
-<div class="flex-1 max-w-md mx-lg hidden md:block">
-<div class="relative">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
-<input class="w-full bg-surface-container-highest border-none rounded-full py-2 pl-10 pr-4 text-on-surface focus:ring-2 focus:ring-primary focus:bg-surface transition-colors font-body-sm text-body-sm" placeholder="Search" type="text"/>
-</div>
-</div>
-<div class="flex items-center gap-sm">
-<button class="p-2 text-secondary dark:text-outline hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full cursor-pointer active:opacity-80">
-<span class="material-symbols-outlined">signal_cellular_alt</span>
-</button>
-<button class="p-2 text-secondary dark:text-outline hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full cursor-pointer active:opacity-80">
-<span class="material-symbols-outlined">notifications</span>
-</button>
-<button class="p-2 text-secondary dark:text-outline hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full cursor-pointer active:opacity-80 hidden md:block">
-<span class="material-symbols-outlined">help</span>
-</button>
-<div class="ml-sm w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center cursor-pointer font-bold text-sm" title="User Profile Avatar">
-                    U
-                </div>
-</div>
+<!-- Standard Topbar -->
+<header class="flex justify-between items-center h-16 px-lg w-full z-40 sticky top-0 bg-surface shadow-sm border-b border-outline-variant">
+    <!-- Brand / Search Area -->
+    <div class="flex items-center gap-xl flex-1">
+        <button class="md:hidden text-secondary hover:bg-surface-container-low p-2 rounded-full transition-colors flex items-center justify-center">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+        <h2 class="font-headline-sm text-headline-sm font-bold text-primary md:hidden">ZoomConnect</h2>
+
+        <!-- Global Search (Desktop) -->
+        <div class="hidden md:flex relative max-w-md w-full">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-sm">search</span>
+            <input class="w-full bg-surface-container-low border border-outline-variant rounded-full py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm transition-all text-on-surface placeholder:text-on-surface-variant/70" placeholder="Search ZoomConnect..." type="text"/>
+        </div>
+    </div>
+
+    <!-- Right Actions -->
+    <div class="flex items-center gap-sm">
+        <button class="p-2 rounded-full text-secondary hover:bg-surface-container-high transition-colors md:hidden">
+            <span class="material-symbols-outlined">search</span>
+        </button>
+        <button class="p-2 rounded-full text-secondary hover:bg-surface-container-high transition-colors relative">
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full border border-surface"></span>
+        </button>
+        <button class="p-2 rounded-full text-secondary hover:bg-surface-container-high transition-colors hidden sm:block">
+            <span class="material-symbols-outlined">help</span>
+        </button>
+        <div class="w-8 h-8 rounded-full ml-md overflow-hidden border border-outline-variant cursor-pointer hover:ring-2 hover:ring-primary/50 transition-all md:hidden">
+            <img alt="User profile" class="w-full h-full object-cover" src="../assets/screenshots/photo_6086738626269090980_x.jpg" onerror="this.src='https://ui-avatars.com/api/?name=User&background=0D8ABC&color=fff';"/>
+        </div>
+    </div>
 </header>
+<!-- End Standard Topbar -->
 <!-- Main Scrollable Area -->
 <main class="flex-1 overflow-y-auto p-md md:p-xl bg-background flex justify-center items-start">
 <!-- Schedule Meeting Card -->
@@ -195,4 +199,5 @@
 </div>
 </main>
 </div>
+<script src="../assets/js/app.js"></script>
 </body></html>
